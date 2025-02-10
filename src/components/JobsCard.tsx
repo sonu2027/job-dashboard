@@ -42,7 +42,7 @@ const JobsCard: React.FC<JobsCardProps> = ({ aboutJob }) => {
     }, [aboutJob.rating])
 
     return (
-        <div onClick={() => router.push(`/applyjob/${aboutJob.id}`)} className='border-[1px] border-solid border-gray-300 rounded-2xl p-2 mx-4 my-4'>
+        <div onClick={() => router.push(`/applyjob/${aboutJob.id}`)} className='border-[1px] border-solid border-gray-300 rounded-2xl p-2 mx-4 my-4 hover:cursor-pointer hover:border-gray-950'>
             <div style={{ backgroundColor: aboutJob.bgColor }} className='px-2 py-4 rounded-xl flex flex-col gap-y-2'>
                 <div className='flex justify-between items-center'>
                     <img className='h-6 w-6' src="https://png.pngtree.com/png-clipart/20191120/original/pngtree-apple-fruit-swoosh-logo-apple-icon-vector-isolated-illustration-apple-fruit-png-image_5066574.jpg" alt="company-logo" />
@@ -74,7 +74,11 @@ const JobsCard: React.FC<JobsCardProps> = ({ aboutJob }) => {
                     <span className='text-xl font-medium'>{aboutJob.salary}</span>
                     <span>/Monthly</span>
                 </div>
-                <button className='bg-[#171923] px-[14px] py-[6px] rounded-2xl text-white'>View details</button>
+                <button onClick={(e) => {
+                    e.stopPropagation()
+                    router.push(`/jobdetails/${aboutJob.id}`)
+                }
+                } className='dark:bg-[#171923] bg-blue-600 px-[14px] py-[6px] rounded-2xl text-white hover:bg-gray-700 hover:text-white'>View details</button>
             </div>
         </div>
     )

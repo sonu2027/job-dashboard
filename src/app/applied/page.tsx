@@ -5,6 +5,7 @@ import { totalJobs } from '@/function/jobData'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store/store'
 import JobsCard from '@/components/JobsCard'
+import DarkMode from '@/components/DarkMode'
 
 function Page() {
 
@@ -29,6 +30,7 @@ function Page() {
   return (
     <div>
       <Navbar pageName="applied" />
+      <DarkMode/>
       <div className='flex flex-wrap justify-around'>
         {
           appliedJobs.map((e) => <JobsCard key={e.id} aboutJob={e} />)

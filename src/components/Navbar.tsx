@@ -25,8 +25,8 @@ const Navbar: React.FC<pageNameProps> = ({ pageName }) => {
   const [sal, setSalVal] = useState<string>("500")
 
   return (
-    <div>
-      <div className='flex justify-around bg-[#171923] text-b-white border-b-[1px] border-b-solid border-gray-700 py-2 sm:p-0'>
+    <div className='sticky top-0'>
+      <div className='flex justify-around dark:bg-[#171923] bg-blue-600 text-b-white border-b-[1px] border-b-solid border-gray-700 py-2 sm:p-0'>
         <h1 className='text-2xl text-white flex justify-center items-center'>Eclipse</h1>
         <ul className='hidden sm:flex justify-center items-center gap-x-[2vw] md:gap-x-[4vw] lg:gap-x-4rem text-gray-200'>
           <li className={`py-4 hover:cursor-pointer hover:font-bold ${pageName === "findjob" ? "border-b-2 border-solid border-gray-200" : ""}`} onClick={() => router.push("/")}>Find Job</li>
@@ -60,7 +60,7 @@ const Navbar: React.FC<pageNameProps> = ({ pageName }) => {
         }
       </div>
       {
-        menu && <div className='bg-[#171923] py-1 sm:hidden border-b-[1px] border-b-solid border-gray-700'>
+        menu && <div className='dark:bg-[#171923] bg-blue-500 py-1 sm:hidden border-b-[1px] border-b-solid border-gray-700'>
           <ul className='flex flex-col justify-center items-center text-gray-200'>
             <li className={`py-2 hover:cursor-pointer hover:font-bold ${pageName === "findjob" ? "border-b-2 border-solid border-gray-200" : ""}`} onClick={() => router.push("/")} >Find Job</li>
             <li className={`py-4 hover:cursor-pointer hover:font-bold ${pageName === "applied" ? "border-b-2 border-solid border-gray-200" : ""}`} onClick={() => router.push("/applied")}>Applied</li>
@@ -70,7 +70,7 @@ const Navbar: React.FC<pageNameProps> = ({ pageName }) => {
           </ul>
         </div>
       }
-      <div className='flex flex-wrap justify-around py-2 text-sm gap-x-4 gap-y-10 bg-[#171923] text-white'>
+      <div className='flex flex-wrap justify-around py-2 text-sm gap-x-4 gap-y-10 bg-blue-600 dark:bg-[#171923] text-white'>
         {
           choosedFilter.map((e) => <ChoosedFilter key={e} filter={e} />)
         }

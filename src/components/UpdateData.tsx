@@ -4,7 +4,7 @@ import { IoFingerPrintOutline } from "react-icons/io5";
 
 function UpdateData() {
     return (
-        <div className='bg-[#171923] flex flex-col justify-center items-center gap-y-3 p-3 sm:gap-y-5 sm:p-5 rounded-2xl'>
+        <div className='dark:bg-[#171923] bg-blue-600 flex flex-col justify-center items-center gap-y-3 p-3 sm:gap-y-5 sm:p-5 rounded-2xl'>
             <div className='p-1 sm:p-3 rounded-full bg-white'>
                 <IoFingerPrintOutline className='text-2xl sm:text-4xl text-black' />
             </div>
